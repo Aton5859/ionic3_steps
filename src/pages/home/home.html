@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let item of showData">
+      <ion-item style="border-bottom: 1px solid rgb(168, 163, 163);" text-wrap>
+        <ion-icon *ngIf="item.status === 'Y'" name="checkmark-circle-outline" item-left></ion-icon>
+        <ion-icon *ngIf="item.status === 'I'" name="information-circle" item-left></ion-icon>
+        <ion-icon *ngIf="item.status === 'N'" name="radio-button-on" item-left></ion-icon>
+        {{item.text}}
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
