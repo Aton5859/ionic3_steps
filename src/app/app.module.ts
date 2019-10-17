@@ -1,3 +1,4 @@
+import { DetailPage } from './../pages/detail/detail';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -12,6 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { http } from '../common/http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ListPage } from '../pages/list/list';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ListPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ListPage,
+    DetailPage
   ],
   providers: [
     StatusBar,

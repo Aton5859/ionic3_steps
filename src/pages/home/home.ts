@@ -1,3 +1,4 @@
+import { ListPage } from './../list/list';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { http } from "../../common/http.service";
@@ -38,6 +39,15 @@ export class HomePage {
     try {
       let that: this = this;
       that.showData = [];
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  turnToList() {
+    try {
+      let that: this = this;
+      that.navCtrl.push(ListPage);
     } catch (error) {
       alert(error);
     }
