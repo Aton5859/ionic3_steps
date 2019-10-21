@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, IonicApp, App } from 'ionic-angular';
+import { Platform, IonicApp, App, ViewController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,7 +16,9 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public ionicApp: IonicApp,
-    public app: App
+    public app: App,
+    // public viewCtrl: ViewController,
+    // public navCtrl: NavController
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -34,7 +36,15 @@ export class MyApp {
       //在主tab页
       let views = this.app.getActiveNav().getActive();
       if (views.component.name === "HomePage" || views.component.name === "AboutPage" || views.component.name === "ContactPage") {
-        this.platform.exitApp();
+        //this.platform.exitApp();
+        // this.viewCtrl.dismiss();
+        // this.navCtrl.popAll();
+        // let overlay = this.app._appRoot._overlayPortal.getActive();
+        /*  views.dismiss(); */
+        window.history.back();
+      } else {
+        let nav = this.app.getActiveNav();
+        nav.pop();
       }
     })
   }
