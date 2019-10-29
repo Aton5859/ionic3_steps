@@ -56,7 +56,6 @@ export class HomePage {
   //#region 读取session storage   --配合应用壳测试
   readSessionStorage() {
     try {
-      let that: this = this;
       let temp = window.sessionStorage.getItem("testSession");
       alert(temp);
     } catch (error) {
